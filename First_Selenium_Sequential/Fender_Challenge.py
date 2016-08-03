@@ -8,12 +8,6 @@ import unittest
 
 
 
-
-# Download chrome diver server from http://chromedriver.storage.googleapis.com/index.html?path=2.22/
-# After downloading the ChromeDriver server, unzip and copy the file to the same directory where the scripts are stored.
-#
-
-
 # get the path of chromedriver
 dir = os.path.dirname(__file__)
 chrome_driver_path = dir + "\chromedriver.exe" #remove the .exe extension on linux or mac platform
