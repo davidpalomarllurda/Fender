@@ -20,3 +20,17 @@ to go back and forth in order to get to the US web page.
 
 **Note2: Make sure that when running the tests, the mouse pointer is away from the web browser since this may activate some javascript
 on the web page that may interfer witht the actual testing. 
+
+
+
+Enhancements:
+
+This exercise was done with the purpose of showing we can use the unittest framework to write selenium tests and have a report of the results
+in the console. 
+
+I'd like to do some more code refactoring and possibly add more comments, since we are using the same calls as in First_Selenium_Sequential folder. 
+I'd like to do some refactoring of a couple of xpath queries I have used and also substitute a time.sleep system call to a selenium
+explicit wait method.
+
+Obviously these are separated tests written in a short amount of time, the best way to do it would be building a test framework with methods
+that would encapsulate all the selenium code.

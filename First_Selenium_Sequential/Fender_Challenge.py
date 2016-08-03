@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.action_chains import ActionChains
 import os
 import time
 import unittest
@@ -18,7 +17,7 @@ driver.implicitly_wait(30)
 driver.maximize_window()
 
 
-# navigate to the Fender American page where the virtual shop is.
+# navigate to the Fender American page where the virtual shop is, a workaround is applied here
 driver.get("http://shop.fender.com/en-US")
 
 print(driver.current_url)
@@ -107,5 +106,4 @@ assert "Billing Checkout | Fender" == driver.title
 driver.quit()
 
 
-##hover = ActionChains(driver).move_to_element(sec_checkout_button)
-##hover.perform
+
