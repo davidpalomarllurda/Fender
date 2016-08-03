@@ -30,19 +30,25 @@ class BuyGuitarTests(unittest.TestCase):
         # navigate to the Fender American page where the virtual shop is.
         cls.driver.get("http://shop.fender.com/en-US")
 
-        change_region_link= cls.driver.find_element_by_link_text("Change Your Region")
-        change_region_link.click()
+        
+        
+        if (cls.driver.current_url != "http://shop.fender.com/en-US"):
 
-        #There is a bug in the page when we open a new session with the browser when we navigate to /en-US/ path, brings us to /en-GB/en-US path
-        #which does not extist, we need to work around navigating back and then navigate again to /en-US/ then this second time we get to
-        #the right place
+            change_region_link= cls.driver.find_element_by_link_text("Change Your Region")
+            change_region_link.click()
 
-        us_shop_link= cls.driver.find_element_by_link_text("United States of America (en)")
-        us_shop_link.click()
+            #There is a bug in the page when we open a new session with the browser when we navigate to /en-US/ path, brings us to /en-GB/en-US path
+            #which does not extist, we need to work around navigating back and then navigate again to /en-US/ then this second time we get to
+            #the right place
 
-        cls.driver.back()
-        us_shop_link= cls.driver.find_element_by_link_text("United States of America (en)")
-        us_shop_link.click()
+            us_shop_link= cls.driver.find_element_by_link_text("United States of America (en)")
+            us_shop_link.click()
+
+            
+            
+            cls.driver.back()
+            us_shop_link= cls.driver.find_element_by_link_text("United States of America (en)")
+            us_shop_link.click()
 
 
     def test_buy_jazzmaster_guitar(self):

@@ -1,11 +1,10 @@
-
-
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 import os
 import time
 import unittest
+
 
 
 
@@ -28,17 +27,22 @@ driver.maximize_window()
 # navigate to the Fender American page where the virtual shop is.
 driver.get("http://shop.fender.com/en-US")
 
-change_region_link= driver.find_element_by_link_text("Change Your Region")
-change_region_link.click()
+print(driver.current_url)
+print(driver.title)
 
-us_shop_link= driver.find_element_by_link_text("United States of America (en)")
-us_shop_link.click()
+if (driver.current_url != "http://shop.fender.com/en-US"):
 
-driver.back()
-us_shop_link= driver.find_element_by_link_text("United States of America (en)")
-us_shop_link.click()
+    change_region_link= driver.find_element_by_link_text("Change Your Region")
+    change_region_link.click()
 
+    us_shop_link= driver.find_element_by_link_text("United States of America (en)")
+    us_shop_link.click()
 
+    driver.back()
+    us_shop_link= driver.find_element_by_link_text("United States of America (en)")
+    us_shop_link.click()
+
+    print(driver.title)
 
 #click on the products hyperlink to expand the menu
 product= driver.find_element_by_xpath("//a[contains(@data-category-id, 'fender-products')]")
@@ -49,6 +53,8 @@ jazzmaster= driver.find_element_by_link_text("Jazzmaster")
 jazzmaster.click()
 
 #Select Jazzmaster Lacquer Guitar
+
+
 jazzmaster_american_lacquer= driver.find_element_by_xpath("//a[contains(@title, 'Lacquer')]")
 jazzmaster_american_lacquer.click()
 
@@ -99,7 +105,9 @@ continue_button= driver.find_elements_by_xpath("//label[@value='Continue ']")[-1
 continue_button.click()
 
 print('Success! Reached billing page')
+print(driver.title)
 
+assert "Billing Checkout | Fender" == driver.title
 
 # close the browser window
 driver.quit()
