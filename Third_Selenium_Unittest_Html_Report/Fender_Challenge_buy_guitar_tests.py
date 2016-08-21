@@ -28,11 +28,11 @@ class BuyGuitarTests(unittest.TestCase):
 
 
         # navigate to the Fender American page where the virtual shop is.
-        cls.driver.get("http://shop.fender.com/en-US")
+        cls.driver.get("http://shop.fender.com/en-US/")
 
         print('cls.driver.current_url')
 
-        if (cls.driver.current_url != "http://shop.fender.com/en-US"):
+        if (cls.driver.current_url != "http://shop.fender.com/en-US/"):
 
             change_region_link= cls.driver.find_element_by_link_text("Change Your Region")
             change_region_link.click()

@@ -9,24 +9,24 @@ from selenium.webdriver.support.ui import WebDriverWait
 @given('we are on the main page')
 def step_impl(context):
 
-    context.driver.get("http://shop.fender.com/en-US")
+    context.driver.get("http://shop.fender.com/en-US/")
     
 
-    if(context.driver.current_url != 'http://shop.fender.com/en-US'):
+    if(context.driver.current_url != 'http://shop.fender.com/en-US/'):
         change_region_link= context.driver.find_element_by_link_text("Change Your Region")
         change_region_link.click()
 
-        time.sleep(2)
+        #time.sleep(2)
         
         us_shop_link= context.driver.find_element_by_link_text("United States of America (en)")
         #us_shop_link= Webdriver(context.driver, 10).until(expected_conditions.visibility_of_element_located((By.LINK_TEXT, "United States of America (en)")))
         us_shop_link.click()
 
-        time.sleep(2)
+        #time.sleep(2)
         
         context.driver.back()
 
-        time.sleep(2)
+        #time.sleep(2)
         
         us_shop_link= context.driver.find_element_by_link_text("United States of America (en)")
         us_shop_link.click()
@@ -36,7 +36,7 @@ def step_impl(context):
 @when('I choose guitar main model "{text}"')
 def step_impl(context, text):
 
-    time.sleep(2)
+    #time.sleep(2)
 
     
     
@@ -44,7 +44,7 @@ def step_impl(context, text):
     product= context.driver.find_element_by_xpath("//a[contains(@data-category-id, 'fender-products')]")
     product.click()
 
-    time.sleep(2)
+    #time.sleep(2)
     
     #Select guitar main model
     

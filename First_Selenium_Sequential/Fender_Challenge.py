@@ -18,12 +18,12 @@ driver.maximize_window()
 
 
 # navigate to the Fender American page where the virtual shop is, a workaround is applied here
-driver.get("http://shop.fender.com/en-US")
+driver.get("http://shop.fender.com/en-US/")
 
 print(driver.current_url)
 print(driver.title)
 
-if (driver.current_url != "http://shop.fender.com/en-US"):
+if (driver.current_url != "http://shop.fender.com/en-US/"):
 
     change_region_link= driver.find_element_by_link_text("Change Your Region")
     change_region_link.click()

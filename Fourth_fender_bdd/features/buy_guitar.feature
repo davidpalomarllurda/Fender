@@ -26,9 +26,9 @@ Feature: I want to buy a guitar
 	   And I choose guitar submodel "Kurt Cobain"
 	  then I will get to the billing page
 	   
-    Scenario: Buying a Telecaster American Vintage
+    Scenario: Buying a Telecaster Chris Shiflett
 	 Given we are on the main page
 	  when I choose guitar main model "Telecaster"
-	   And I choose guitar submodel "American Vintage"
+	   And I choose guitar submodel "Chris Shiflett"
 	  then I will get to the billing page
   
